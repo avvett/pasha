@@ -1,0 +1,118 @@
+.block_elem { display: block; }
+
+.inline_elem { display: inline-block; }
+
+.disp_table { display: table; width: 100%; }
+.disp_trow { display: table-row; }
+.disp_tcell { display: table-cell; float: none; }
+
+.vert_align_center { vertical-align: middle; }
+.vert_align_bottom { vertical-align: bottom; }
+
+.unstyled_ul 
+{ 
+    list-style-type: none;
+    padding-left: 0;
+}
+
+
+
+
+.make-marg-classes(@index) when (@index >= 0)
+{
+    .tmarg@{index}
+    {
+        margin-top: unit(@index, px) !important;
+    }
+
+    .rmarg@{index}
+    {
+        margin-right: unit(@index, px) !important;
+    }
+
+    .bmarg@{index}
+    {
+        margin-bottom: unit(@index, px) !important;
+    }
+
+    .lmarg@{index}
+    {
+        margin-left: unit(@index, px) !important;
+    }
+
+    .pad@{index}
+    {
+        padding: unit(@index, px) !important;
+    }
+
+    .tpad@{index}
+    {
+        padding-top: unit(@index, px) !important;
+    }
+
+    .rpad@{index}
+    {
+        padding-right: unit(@index, px) !important;
+    }
+
+    .bpad@{index}
+    {
+        padding-bottom: unit(@index, px) !important;
+    }
+
+    .lpad@{index}
+    {
+        padding-left: unit(@index, px) !important;
+    }
+
+    // next iteration
+    .make-marg-classes(@index - 5) !important;
+}
+
+.make-marg-classes(200);
+
+.tmarg0 { margin-top: 0 !important; }
+.rmarg0 { margin-right: 0 !important; }
+.bmarg0 { margin-bottom: 0 !important; }
+.lmarg0 { margin-left: 0 !important; }
+
+.tpad0 { padding-top: 0 !important; }
+.rpad0 { padding-right: 0 !important; }
+.bpad0 { padding-bottom: 0 !important; }
+.lpad0 { padding-left: 0 !important; }
+
+.w100 { width: 100%; }
+.w_auto { width: auto; }
+
+.block_elem { display: block; }
+.inlin_block_elem { display:  inline-block; }
+.inline_elem { display: inline; }
+
+.disp_table { display: table; }
+.disp_table_row { display: table-row; }
+.disp_table_cell { display: table-cell; float: none; }
+.v_align_middle { vertical-align: middle; }
+
+.pos_relative { position: relative; }
+.invisible { visibility: hidden; }
+
+
+
+a { color: #333; }
+
+
+.divider
+{
+	margin: 0;
+	border-color: #ddd;
+
+	&.mtb20
+	{
+		margin: 20px 0;
+	}
+
+	&.dotted
+	{
+		border-style: dotted;
+	}
+}
